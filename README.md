@@ -30,11 +30,31 @@ A simple react boilerplate with Webpack v4 as module bundler and Babel for ES6 c
 
 In Real world scenarios, to define project environment configurations, you will want to have the environment related variables at the root of your project in a file called .env
 
+Structure of the .env file:
+```sh
+    ENV=production
+    PORT=4000
+```
+
 You can set that variable in the global scope by doing the following:
 
 1. Require the .env file at the top of webpack.dev.js or webpack.prod.js by:
-* `env = require('dotenv').config();`
+```sh
+env = require('dotenv').config();
+```
 2. Set the environment in the global scope by doing the following:
-* `plugins: [new webpack.DefinePlugin({'process.env': {'ENV': }})]`
+```sh
+plugins: [
+    new webpack.DefinePlugin(
+        {
+            'process.env': {
+                'ENV': 
+            }
+        }
+    )
+]
+```
+
+* Refer config/webpack.dev.js 
 
 

@@ -1,6 +1,8 @@
 const webpackMerge = require('webpack-merge'),
       commonConfig = require('./webpack.common.js'),
-      helpers = require('./helpers');
+      helpers = require('./helpers'),
+      env = require('dotenv').config(),
+      PORT = process.env.PORT || '3000'; // Fallback to 3000 if port number is missing in configuration
 
 module.exports = webpackMerge(commonConfig, {
 
@@ -20,9 +22,9 @@ module.exports = webpackMerge(commonConfig, {
     noInfo: true, // messages like the webpack bundle information that is shown when starting up and after each save, will be hidden
     hotOnly: false, // Enables Hot Module Replacement without page refresh as fallback in case of build failures.
     compress: true, // Compress everything using Gzip before serving
-    port: 3000, // You can also configure this port number through your config file,
+    port: PORT, // You can also configure this port number through your config file,
     after: function(app) {
-      console.log('\nYour App is running @ http://localhost:3000');
+      console.log(`\nYour App is running @ http://localhost:${PORT}`);
       console.log('=============================================================');
     }
   }
