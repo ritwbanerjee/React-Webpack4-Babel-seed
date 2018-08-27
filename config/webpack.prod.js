@@ -9,7 +9,7 @@ module.exports = webpackMerge(commonConfig, {
   output: {
     path: helpers.root('dist'),
     publicPath: '/',
-    filename: '[name].[hash].js', // Cache Buster - do not remove the [hash]
+    filename: 'bundle.[hash].js', // Cache Buster - do not remove the [hash]
     chunkFilename: '[id].chunk.[hash].js' // Cache Buster - do not remove the [hash]
   },
   optimization: {

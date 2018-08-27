@@ -7,7 +7,7 @@
     "start": "ENV=development webpack-dev-server --color --progress --mode development",
     "postinstall": "npm run build",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --env.prod --mode production  && npm run minify",
-    "minify": "uglifyjs dist/main.*.js --screw-ie8 --compress --mangle --output dist/main.*.js",
+    "minify": "uglifyjs dist/bundle.*.js --screw-ie8 --compress --mangle --output dist/bundle.*.js",
     "bundle-report": "webpack-bundle-analyzer stats.json"
   },
   "author": "ritwikbanerjee",
