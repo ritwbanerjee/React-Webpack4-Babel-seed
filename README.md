@@ -48,7 +48,7 @@ plugins: [
     new webpack.DefinePlugin(
         {
             'process.env': {
-                'ENV': 
+                'ENV': process.env.PORT
             }
         }
     )
