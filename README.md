@@ -33,8 +33,8 @@ In Real world scenarios, to define project environment configurations, you will 
 You can set that variable in the global scope by doing the following:
 
 1. Require the .env file at the top of webpack.dev.js or webpack.prod.js by:
-`env = require('dotenv').config();`
+* `env = require('dotenv').config();`
 2. Set the environment in the global scope by doing the following:
-`plugins: [new webpack.DefinePlugin({'process.env': {'ENV': }})]`
+* `plugins: [new webpack.DefinePlugin({'process.env': {'ENV': }})]`
 
 
